@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _push - add node to the stack
+ * _push - add or push an element to the stack
  * @h_ptr: stack head pointer
  * @num: intiger line counter
  * Return: void
@@ -22,6 +22,7 @@ void _push(stack_t **h_ptr, unsigned int num)
 		if (z == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", num);
+			/*deletes all buffers that are acssociated with the stream*/
 			fclose(carry.file);
 			free(carry.matrial);
 			stack_free(*h_ptr);
@@ -30,11 +31,13 @@ void _push(stack_t **h_ptr, unsigned int num)
 	}
 	else
 	{
+		/*to wright data in a file using stream object not stdout console*/
 		fprintf(stderr, "L%d: usage: push integer\n", num);
 		fclose(carry.file);
 		free(carry.matrial);
 		stack_free(*h_ptr);
-		exit(EXIT_FAILURE); }
+		exit(EXIT_FAILURE);
+	}
 	n = atoi(carry.arg);
 	if (carry.ch_fl == 0)
 		node_add(h_ptr, n);
@@ -43,7 +46,7 @@ void _push(stack_t **h_ptr, unsigned int num)
 }
 
 /**
- * _pall - prints the stack
+ * _pall - prints all the values on the stack
  * @h_ptr: stack head pointer
  * @num: intuger
  * Return: void
