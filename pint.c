@@ -1,25 +1,22 @@
 #include "monty.h"
 
 /**
- * _pop - remove the top element of the stack
+ * _pint - prints the top of the stack followed by new line
  * @h_ptr: stack head pointer
- * @num: intigerline number
+ * @num: intiger line number
  * Return: void
  */
-void _pop(stack_t **h_ptr, unsigned int num)
+void _pint(stack_t **h_ptr, unsigned int num)
 {
-	stack_t *h;
-
 	if (*h_ptr == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", num);
+		/*to wright data in a file using stream object not stdout console*/
+		fprintf(stderr, "L%u: can't pint, stack empty\n", num);
+		/*deleyes all buffers that are acssociated with the stream before closing*/
 		fclose(carry.file);
 		free(carry.matrial);
 		stack_free(*h_ptr);
 		exit(EXIT_FAILURE);
 	}
-	h = *h_ptr;
-	*h_ptr = h->next;
-	free(h);
+	printf("%d\n", (*h_ptr)->n);
 }
-
