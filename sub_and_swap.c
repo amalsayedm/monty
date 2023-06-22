@@ -17,7 +17,7 @@ stack_t *aux;
 		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
 		fclose(carry.file);
 		free(carry.matrial);
-		free_stack(*head);
+		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	aux = *head;
@@ -28,11 +28,11 @@ stack_t *aux;
 }
 
 /**
- * swap - swap the top two elements of the stack
+ * _swap - swap the top two elements of the stack
  * @head: head
  * @counter: line number
  */
-void swap(stack_t **head, unsigned int counter)
+void _swap(stack_t **head, unsigned int counter)
 {
 	int size = 0, aux;
 	stack_t *top;
@@ -48,7 +48,7 @@ void swap(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 		fclose(carry.file);
 		free(carry.matrial);
-		free_stack(*head);
+		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	top = *head;

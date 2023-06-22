@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * mul - multiplies the top two elements
+ * _mul - multiplies the top two elements
  * @head: head
  * @counter: line number
 */
-void mul(stack_t **head, unsigned int counter)
+void _mul(stack_t **head, unsigned int counter)
 {
 	stack_t *head_temp;
 	int size = 0, aux;
@@ -20,7 +20,7 @@ void mul(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: can't mul, stack too short\n", counter);
 		fclose(carry.file);
 		free(carry.matrial);
-		free_stack(*head);
+		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	head_temp = *head;
@@ -30,11 +30,11 @@ void mul(stack_t **head, unsigned int counter)
 	free(head_temp);
 }
 /**
-  *nop- free counter
+  *_nop- free counter
   *@head: head
   *@counter: number
  */
-void nop(stack_t **head, unsigned int counter)
+void _nop(stack_t **head, unsigned int counter)
 {
 	(void) counter;
 	(void) head;

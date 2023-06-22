@@ -39,7 +39,7 @@ size_t size_line = 0;
 		}
 		free(input);
 	}
-	free_stack(stack);
+	stack_free(stack);
 	fclose(filename);
 return (0);
 }
@@ -91,7 +91,7 @@ unsigned int index = 0;
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcodestr);
 		fclose(fname);
 		free(codeline);
-		free_stack(*stack);
+		stack_free(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }

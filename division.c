@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * f_div - divides the top two elements
+ * _div - divides the top two elements
  * @head:  head
  * @counter: line number
 */
-void f_div(stack_t **head, unsigned int counter)
+void _div(stack_t **head, unsigned int counter)
 {
 	stack_t *temp_head;
 	int size = 0, aux;
@@ -20,7 +20,7 @@ void f_div(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(carry.file);
 		free(carry.matrial);
-		free_stack(*head);
+		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	temp_head = *head;
@@ -29,7 +29,7 @@ void f_div(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(carry.file);
 		free(carry.matrial);
-		free_stack(*head);
+		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	aux = temp_head->next->n / temp_head->n;

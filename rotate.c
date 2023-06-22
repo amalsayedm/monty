@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
-  *rotr- rotates the stack to bottom
+  *_rotr- rotates the stack to bottom
   *@head: head
   *@counter: line number
  */
-void rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+void _rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
 	stack_t *temp;
 
@@ -25,11 +25,11 @@ void rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 }
 
 /**
-  *rotl- rotates the stack top
+  *_rotl- rotates the stack top
   *@head: head
   *@counter: linen number
  */
-void rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void _rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 {
 	stack_t *temp = *head, *nxt;
 
